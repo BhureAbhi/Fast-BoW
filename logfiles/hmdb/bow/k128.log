@@ -1,0 +1,138 @@
+g++ -std=c++11 -O3 -fPIC histogram.cpp -o histogram  -larmadillo -fopenmp
+./kmeans /media/sda5/dataset/hmdb51/X.txt /media/sda5/dataset/hmdb51/C.txt /media/sda5/dataset/hmdb51/Y.txt 128 100
+Loading time: 329.135
+
+Train data has 5613856 rows and 162 columns.
+kmeans(): generating initial means
+kmeans(): n_threads: 12
+kmeans(): iteration:    1   delta: 2.38743
+kmeans(): iteration:    2   delta: 0.0849128
+kmeans(): iteration:    3   delta: 0.0277027
+kmeans(): iteration:    4   delta: 0.0156682
+kmeans(): iteration:    5   delta: 0.0102721
+kmeans(): iteration:    6   delta: 0.00721325
+kmeans(): iteration:    7   delta: 0.0053856
+kmeans(): iteration:    8   delta: 0.00426159
+kmeans(): iteration:    9   delta: 0.00350523
+kmeans(): iteration:   10   delta: 0.00289459
+kmeans(): iteration:   11   delta: 0.00235847
+kmeans(): iteration:   12   delta: 0.00191688
+kmeans(): iteration:   13   delta: 0.0016174
+kmeans(): iteration:   14   delta: 0.00140228
+kmeans(): iteration:   15   delta: 0.00126853
+kmeans(): iteration:   16   delta: 0.00116608
+kmeans(): iteration:   17   delta: 0.00109434
+kmeans(): iteration:   18   delta: 0.00102302
+kmeans(): iteration:   19   delta: 0.000948582
+kmeans(): iteration:   20   delta: 0.000877422
+kmeans(): iteration:   21   delta: 0.00080217
+kmeans(): iteration:   22   delta: 0.000728514
+kmeans(): iteration:   23   delta: 0.000665246
+kmeans(): iteration:   24   delta: 0.000609418
+kmeans(): iteration:   25   delta: 0.000552839
+kmeans(): iteration:   26   delta: 0.000502478
+kmeans(): iteration:   27   delta: 0.000456835
+kmeans(): iteration:   28   delta: 0.000421353
+kmeans(): iteration:   29   delta: 0.000383578
+kmeans(): iteration:   30   delta: 0.000359397
+kmeans(): iteration:   31   delta: 0.000334603
+kmeans(): iteration:   32   delta: 0.000313729
+kmeans(): iteration:   33   delta: 0.000302654
+kmeans(): iteration:   34   delta: 0.000283467
+kmeans(): iteration:   35   delta: 0.000269599
+kmeans(): iteration:   36   delta: 0.000262757
+kmeans(): iteration:   37   delta: 0.00025169
+kmeans(): iteration:   38   delta: 0.000238775
+kmeans(): iteration:   39   delta: 0.000225799
+kmeans(): iteration:   40   delta: 0.000214839
+kmeans(): iteration:   41   delta: 0.000203591
+kmeans(): iteration:   42   delta: 0.000192423
+kmeans(): iteration:   43   delta: 0.000185431
+kmeans(): iteration:   44   delta: 0.000176667
+kmeans(): iteration:   45   delta: 0.000169801
+kmeans(): iteration:   46   delta: 0.000161092
+kmeans(): iteration:   47   delta: 0.000149853
+kmeans(): iteration:   48   delta: 0.000137492
+kmeans(): iteration:   49   delta: 0.00012601
+kmeans(): iteration:   50   delta: 0.000116027
+kmeans(): iteration:   51   delta: 0.000103981
+kmeans(): iteration:   52   delta: 9.50196e-05
+kmeans(): iteration:   53   delta: 8.55685e-05
+kmeans(): iteration:   54   delta: 7.47231e-05
+kmeans(): iteration:   55   delta: 6.72519e-05
+kmeans(): iteration:   56   delta: 6.09911e-05
+kmeans(): iteration:   57   delta: 5.60538e-05
+kmeans(): iteration:   58   delta: 5.13862e-05
+kmeans(): iteration:   59   delta: 4.68733e-05
+kmeans(): iteration:   60   delta: 4.30022e-05
+kmeans(): iteration:   61   delta: 4.11094e-05
+kmeans(): iteration:   62   delta: 3.85227e-05
+kmeans(): iteration:   63   delta: 3.66163e-05
+kmeans(): iteration:   64   delta: 3.50035e-05
+kmeans(): iteration:   65   delta: 3.34876e-05
+kmeans(): iteration:   66   delta: 3.14826e-05
+kmeans(): iteration:   67   delta: 3.01819e-05
+kmeans(): iteration:   68   delta: 3.07869e-05
+kmeans(): iteration:   69   delta: 2.97266e-05
+kmeans(): iteration:   70   delta: 2.88379e-05
+kmeans(): iteration:   71   delta: 2.85773e-05
+kmeans(): iteration:   72   delta: 2.73774e-05
+kmeans(): iteration:   73   delta: 2.58654e-05
+kmeans(): iteration:   74   delta: 2.48236e-05
+kmeans(): iteration:   75   delta: 2.40618e-05
+kmeans(): iteration:   76   delta: 2.31624e-05
+kmeans(): iteration:   77   delta: 2.26665e-05
+kmeans(): iteration:   78   delta: 2.24355e-05
+kmeans(): iteration:   79   delta: 2.0938e-05
+kmeans(): iteration:   80   delta: 2.05235e-05
+kmeans(): iteration:   81   delta: 1.99168e-05
+kmeans(): iteration:   82   delta: 1.97372e-05
+kmeans(): iteration:   83   delta: 1.9854e-05
+kmeans(): iteration:   84   delta: 1.95259e-05
+kmeans(): iteration:   85   delta: 1.87858e-05
+kmeans(): iteration:   86   delta: 1.91528e-05
+kmeans(): iteration:   87   delta: 1.91e-05
+kmeans(): iteration:   88   delta: 1.93408e-05
+kmeans(): iteration:   89   delta: 1.91731e-05
+kmeans(): iteration:   90   delta: 1.8708e-05
+kmeans(): iteration:   91   delta: 1.94914e-05
+kmeans(): iteration:   92   delta: 2.01727e-05
+kmeans(): iteration:   93   delta: 2.02969e-05
+kmeans(): iteration:   94   delta: 2.12686e-05
+kmeans(): iteration:   95   delta: 2.22315e-05
+kmeans(): iteration:   96   delta: 2.23647e-05
+kmeans(): iteration:   97   delta: 2.36035e-05
+kmeans(): iteration:   98   delta: 2.38406e-05
+kmeans(): iteration:   99   delta: 2.47847e-05
+kmeans(): iteration:  100   delta: 2.60557e-05
+(Model Build Time) Time elapsed for kmeans clustering = 1078.13 seconds.
+clustering successful. centers = 128 by 162
+Time for cluster assignment: 209.426 seconds.
+Finished.
+./histogram /media/sda5/dataset/hmdb51/stip_train /media/sda5/dataset/hmdb51/C.txt /media/sda5/dataset/hmdb51/train_hist.txt 3570
+
+warning: Mat::load(): couldn't read /media/sda5/dataset/hmdb51/stip_train/3568.txt
+
+warning: Mat::load(): couldn't read /media/sda5/dataset/hmdb51/stip_train/3569.txt
+
+warning: Mat::load(): couldn't read /media/sda5/dataset/hmdb51/stip_train/3570.txt
+Time taken to load data: 335.12 seconds.
+(Hist Gen Time)Time taken to generate features = 213.728 seconds.
+Hist size = 3570 by 128
+Finished
+./histogram /media/sda5/dataset/hmdb51/stip_test /media/sda5/dataset/hmdb51/C.txt /media/sda5/dataset/hmdb51/test_hist.txt 1530
+Time taken to load data: 159.192 seconds.
+(Hist Gen Time)Time taken to generate features = 61.7213 seconds.
+Hist size = 1530 by 128
+Finished
+./csvtosvm /media/sda5/dataset/hmdb51/train_hist.txt /media/sda5/dataset/hmdb51/train-labels.txt /media/sda5/dataset/hmdb51/train.libsvm
+Fineshed. Time Taken: 0.09433
+./csvtosvm /media/sda5/dataset/hmdb51/test_hist.txt /media/sda5/dataset/hmdb51/test-labels.txt /media/sda5/dataset/hmdb51/test.libsvm
+Fineshed. Time Taken: 0.0488895
+./svm-scale -l 0 -u 1 -s /media/sda5/dataset/hmdb51/scale.txt /media/sda5/dataset/hmdb51/train.libsvm > /media/sda5/dataset/hmdb51/scale_train.libsvm
+./svm-scale -r /media/sda5/dataset/hmdb51/scale.txt /media/sda5/dataset/hmdb51/test.libsvm > /media/sda5/dataset/hmdb51/scale_test.libsvm
+./svm-train -q -t 0 /media/sda5/dataset/hmdb51/scale_train.libsvm /media/sda5/dataset/hmdb51/scale_train.libsvm.model
+time ./svm-predict /media/sda5/dataset/hmdb51/scale_train.libsvm /media/sda5/dataset/hmdb51/scale_train.libsvm.model /media/sda5/dataset/hmdb51/pred_train_label.txt
+Accuracy = 19.6919% (703/3570) (classification)
+time ./svm-predict /media/sda5/dataset/hmdb51/scale_test.libsvm /media/sda5/dataset/hmdb51/scale_train.libsvm.model /media/sda5/dataset/hmdb51/pred_test_label.txt
+Accuracy = 8.16993% (125/1530) (classification)

@@ -1,0 +1,78 @@
+./kmeans /media/sda5/dataset/kth/X.txt /media/sda5/dataset/kth/C.txt /media/sda5/dataset/kth/Y.txt 8192 100
+Loading time: 21.8342
+
+Train data has 290301 rows and 162 columns.
+kmeans(): generating initial means
+kmeans(): n_threads: 12
+kmeans(): iteration:    1   delta: 0.744391
+kmeans(): iteration:    2   delta: 0.0784866
+kmeans(): iteration:    3   delta: 0.0344045
+kmeans(): iteration:    4   delta: 0.01888
+kmeans(): iteration:    5   delta: 0.0117556
+kmeans(): iteration:    6   delta: 0.00807265
+kmeans(): iteration:    7   delta: 0.00540642
+kmeans(): iteration:    8   delta: 0.00387699
+kmeans(): iteration:    9   delta: 0.00282185
+kmeans(): iteration:   10   delta: 0.00211718
+kmeans(): iteration:   11   delta: 0.00162355
+kmeans(): iteration:   12   delta: 0.00127696
+kmeans(): iteration:   13   delta: 0.00108729
+kmeans(): iteration:   14   delta: 0.00083499
+kmeans(): iteration:   15   delta: 0.000679063
+kmeans(): iteration:   16   delta: 0.000458334
+kmeans(): iteration:   17   delta: 0.000342
+kmeans(): iteration:   18   delta: 0.000303401
+kmeans(): iteration:   19   delta: 0.000246808
+kmeans(): iteration:   20   delta: 0.000193609
+kmeans(): iteration:   21   delta: 0.000150706
+kmeans(): iteration:   22   delta: 0.000125762
+kmeans(): iteration:   23   delta: 9.6911e-05
+kmeans(): iteration:   24   delta: 7.95584e-05
+kmeans(): iteration:   25   delta: 7.2404e-05
+kmeans(): iteration:   26   delta: 5.90626e-05
+kmeans(): iteration:   27   delta: 5.90847e-05
+kmeans(): iteration:   28   delta: 4.78181e-05
+kmeans(): iteration:   29   delta: 3.21917e-05
+kmeans(): iteration:   30   delta: 2.35787e-05
+kmeans(): iteration:   31   delta: 2.74116e-05
+kmeans(): iteration:   32   delta: 1.95609e-05
+kmeans(): iteration:   33   delta: 1.71277e-05
+kmeans(): iteration:   34   delta: 1.8839e-05
+kmeans(): iteration:   35   delta: 1.73527e-05
+kmeans(): iteration:   36   delta: 2.37727e-05
+kmeans(): iteration:   37   delta: 1.98607e-05
+kmeans(): iteration:   38   delta: 9.85096e-06
+kmeans(): iteration:   39   delta: 8.20621e-06
+kmeans(): iteration:   40   delta: 9.54996e-06
+kmeans(): iteration:   41   delta: 3.67929e-06
+kmeans(): iteration:   42   delta: 1.91843e-06
+kmeans(): iteration:   43   delta: 3.62615e-06
+kmeans(): iteration:   44   delta: 1.61831e-06
+kmeans(): iteration:   45   delta: 3.54702e-06
+kmeans(): iteration:   46   delta: 7.18795e-07
+kmeans(): iteration:   47   delta: 0
+(Model Build Time) Time elapsed for kmeans clustering = 1714.1 seconds.
+clustering successful. centers = 8192 by 162
+Time for cluster assignment: 1064.08 seconds.
+Finished.
+./histogram /media/sda5/dataset/kth/stip_train /media/sda5/dataset/kth/C.txt /media/sda5/dataset/kth/train_hist.txt 383
+Time taken to load data: 18.0567 seconds.
+(Hist Gen Time)Time taken to generate features = 1066.3 seconds.
+Hist size = 383 by 8192
+Finished
+./histogram /media/sda5/dataset/kth/stip_test /media/sda5/dataset/kth/C.txt /media/sda5/dataset/kth/test_hist.txt 216
+Time taken to load data: 11.2778 seconds.
+(Hist Gen Time)Time taken to generate features = 672.875 seconds.
+Hist size = 216 by 8192
+Finished
+./csvtosvm /media/sda5/dataset/kth/train_hist.txt /media/sda5/dataset/kth/train-labels.txt /media/sda5/dataset/kth/train.libsvm
+Fineshed. Time Taken: 0.0368115
+./csvtosvm /media/sda5/dataset/kth/test_hist.txt /media/sda5/dataset/kth/test-labels.txt /media/sda5/dataset/kth/test.libsvm
+Fineshed. Time Taken: 0.0241822
+./svm-scale -l 0 -u 1 -s /media/sda5/dataset/kth/scale.txt /media/sda5/dataset/kth/train.libsvm > /media/sda5/dataset/kth/scale_train.libsvm
+./svm-scale -r /media/sda5/dataset/kth/scale.txt /media/sda5/dataset/kth/test.libsvm > /media/sda5/dataset/kth/scale_test.libsvm
+./svm-train -q -t 0 /media/sda5/dataset/kth/scale_train.libsvm /media/sda5/dataset/kth/scale_train.libsvm.model
+time ./svm-predict /media/sda5/dataset/kth/scale_train.libsvm /media/sda5/dataset/kth/scale_train.libsvm.model /media/sda5/dataset/kth/pred_train_label.txt
+Accuracy = 100% (383/383) (classification)
+time ./svm-predict /media/sda5/dataset/kth/scale_test.libsvm /media/sda5/dataset/kth/scale_train.libsvm.model /media/sda5/dataset/kth/pred_test_label.txt
+Accuracy = 93.0556% (201/216) (classification)

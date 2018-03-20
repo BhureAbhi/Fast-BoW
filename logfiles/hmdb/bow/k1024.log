@@ -1,0 +1,131 @@
+./kmeans /media/sda5/dataset/kth/X.txt /media/sda5/dataset/kth/C.txt /media/sda5/dataset/kth/Y.txt 1024 100
+Loading time: 17.9987
+
+Train data has 290301 rows and 162 columns.
+kmeans(): generating initial means
+kmeans(): n_threads: 12
+kmeans(): iteration:    1   delta: 1.1643
+kmeans(): iteration:    2   delta: 0.0848988
+kmeans(): iteration:    3   delta: 0.0329725
+kmeans(): iteration:    4   delta: 0.01813
+kmeans(): iteration:    5   delta: 0.0117941
+kmeans(): iteration:    6   delta: 0.00837072
+kmeans(): iteration:    7   delta: 0.00593177
+kmeans(): iteration:    8   delta: 0.00425045
+kmeans(): iteration:    9   delta: 0.00363848
+kmeans(): iteration:   10   delta: 0.00283905
+kmeans(): iteration:   11   delta: 0.00223793
+kmeans(): iteration:   12   delta: 0.00189053
+kmeans(): iteration:   13   delta: 0.0017775
+kmeans(): iteration:   14   delta: 0.00192991
+kmeans(): iteration:   15   delta: 0.00137279
+kmeans(): iteration:   16   delta: 0.001037
+kmeans(): iteration:   17   delta: 0.000984285
+kmeans(): iteration:   18   delta: 0.000798569
+kmeans(): iteration:   19   delta: 0.000752515
+kmeans(): iteration:   20   delta: 0.000722916
+kmeans(): iteration:   21   delta: 0.000820123
+kmeans(): iteration:   22   delta: 0.000523899
+kmeans(): iteration:   23   delta: 0.000399841
+kmeans(): iteration:   24   delta: 0.000364861
+kmeans(): iteration:   25   delta: 0.000339493
+kmeans(): iteration:   26   delta: 0.000343309
+kmeans(): iteration:   27   delta: 0.000518567
+kmeans(): iteration:   28   delta: 0.000417201
+kmeans(): iteration:   29   delta: 0.000265069
+kmeans(): iteration:   30   delta: 0.000206216
+kmeans(): iteration:   31   delta: 0.000188528
+kmeans(): iteration:   32   delta: 0.000169487
+kmeans(): iteration:   33   delta: 0.000168662
+kmeans(): iteration:   34   delta: 0.000137858
+kmeans(): iteration:   35   delta: 0.00014847
+kmeans(): iteration:   36   delta: 0.000137203
+kmeans(): iteration:   37   delta: 0.000122344
+kmeans(): iteration:   38   delta: 0.000108745
+kmeans(): iteration:   39   delta: 0.000119347
+kmeans(): iteration:   40   delta: 0.000114126
+kmeans(): iteration:   41   delta: 9.40903e-05
+kmeans(): iteration:   42   delta: 9.11625e-05
+kmeans(): iteration:   43   delta: 8.21405e-05
+kmeans(): iteration:   44   delta: 8.53668e-05
+kmeans(): iteration:   45   delta: 6.99916e-05
+kmeans(): iteration:   46   delta: 6.49444e-05
+kmeans(): iteration:   47   delta: 6.87363e-05
+kmeans(): iteration:   48   delta: 6.18465e-05
+kmeans(): iteration:   49   delta: 5.12074e-05
+kmeans(): iteration:   50   delta: 5.08096e-05
+kmeans(): iteration:   51   delta: 5.76027e-05
+kmeans(): iteration:   52   delta: 5.89241e-05
+kmeans(): iteration:   53   delta: 6.5871e-05
+kmeans(): iteration:   54   delta: 7.51839e-05
+kmeans(): iteration:   55   delta: 7.27326e-05
+kmeans(): iteration:   56   delta: 6.47702e-05
+kmeans(): iteration:   57   delta: 5.45327e-05
+kmeans(): iteration:   58   delta: 4.72882e-05
+kmeans(): iteration:   59   delta: 4.63688e-05
+kmeans(): iteration:   60   delta: 5.75961e-05
+kmeans(): iteration:   61   delta: 4.32846e-05
+kmeans(): iteration:   62   delta: 3.91664e-05
+kmeans(): iteration:   63   delta: 3.21079e-05
+kmeans(): iteration:   64   delta: 2.99178e-05
+kmeans(): iteration:   65   delta: 3.73711e-05
+kmeans(): iteration:   66   delta: 3.80067e-05
+kmeans(): iteration:   67   delta: 4.68456e-05
+kmeans(): iteration:   68   delta: 6.4756e-05
+kmeans(): iteration:   69   delta: 7.90019e-05
+kmeans(): iteration:   70   delta: 9.60247e-05
+kmeans(): iteration:   71   delta: 6.81967e-05
+kmeans(): iteration:   72   delta: 4.04542e-05
+kmeans(): iteration:   73   delta: 4.27706e-05
+kmeans(): iteration:   74   delta: 3.53943e-05
+kmeans(): iteration:   75   delta: 1.99994e-05
+kmeans(): iteration:   76   delta: 1.52382e-05
+kmeans(): iteration:   77   delta: 1.14045e-05
+kmeans(): iteration:   78   delta: 1.18789e-05
+kmeans(): iteration:   79   delta: 9.3813e-06
+kmeans(): iteration:   80   delta: 6.73079e-06
+kmeans(): iteration:   81   delta: 6.33826e-06
+kmeans(): iteration:   82   delta: 6.37909e-06
+kmeans(): iteration:   83   delta: 5.87486e-06
+kmeans(): iteration:   84   delta: 5.02354e-06
+kmeans(): iteration:   85   delta: 4.90868e-06
+kmeans(): iteration:   86   delta: 4.43707e-06
+kmeans(): iteration:   87   delta: 3.37947e-06
+kmeans(): iteration:   88   delta: 2.98463e-06
+kmeans(): iteration:   89   delta: 2.95193e-06
+kmeans(): iteration:   90   delta: 3.65543e-06
+kmeans(): iteration:   91   delta: 4.04375e-06
+kmeans(): iteration:   92   delta: 4.81139e-06
+kmeans(): iteration:   93   delta: 4.3689e-06
+kmeans(): iteration:   94   delta: 2.48633e-06
+kmeans(): iteration:   95   delta: 2.25415e-06
+kmeans(): iteration:   96   delta: 1.91843e-06
+kmeans(): iteration:   97   delta: 1.17364e-06
+kmeans(): iteration:   98   delta: 9.46112e-07
+kmeans(): iteration:   99   delta: 1.20816e-06
+kmeans(): iteration:  100   delta: 7.47031e-07
+(Model Build Time) Time elapsed for kmeans clustering = 455.401 seconds.
+clustering successful. centers = 1024 by 162
+Time for cluster assignment: 126.316 seconds.
+Finished.
+./histogram /media/sda5/dataset/kth/stip_train /media/sda5/dataset/kth/C.txt /media/sda5/dataset/kth/train_hist.txt 383
+Time taken to load data: 19.6434 seconds.
+(Hist Gen Time)Time taken to generate features = 117.612 seconds.
+Hist size = 383 by 1024
+Finished
+./histogram /media/sda5/dataset/kth/stip_test /media/sda5/dataset/kth/C.txt /media/sda5/dataset/kth/test_hist.txt 216
+Time taken to load data: 11.372 seconds.
+(Hist Gen Time)Time taken to generate features = 74.513 seconds.
+Hist size = 216 by 1024
+Finished
+./csvtosvm /media/sda5/dataset/kth/train_hist.txt /media/sda5/dataset/kth/train-labels.txt /media/sda5/dataset/kth/train.libsvm
+Fineshed. Time Taken: 0.0131843
+./csvtosvm /media/sda5/dataset/kth/test_hist.txt /media/sda5/dataset/kth/test-labels.txt /media/sda5/dataset/kth/test.libsvm
+Fineshed. Time Taken: 0.00824842
+./svm-scale -l 0 -u 1 -s /media/sda5/dataset/kth/scale.txt /media/sda5/dataset/kth/train.libsvm > /media/sda5/dataset/kth/scale_train.libsvm
+./svm-scale -r /media/sda5/dataset/kth/scale.txt /media/sda5/dataset/kth/test.libsvm > /media/sda5/dataset/kth/scale_test.libsvm
+./svm-train -q -t 0 /media/sda5/dataset/kth/scale_train.libsvm /media/sda5/dataset/kth/scale_train.libsvm.model
+time ./svm-predict /media/sda5/dataset/kth/scale_train.libsvm /media/sda5/dataset/kth/scale_train.libsvm.model /media/sda5/dataset/kth/pred_train_label.txt
+Accuracy = 99.7389% (382/383) (classification)
+time ./svm-predict /media/sda5/dataset/kth/scale_test.libsvm /media/sda5/dataset/kth/scale_train.libsvm.model /media/sda5/dataset/kth/pred_test_label.txt
+Accuracy = 90.2778% (195/216) (classification)

@@ -1,0 +1,19 @@
+./histogram /media/sda5/dataset/hmdb51/stip_train /media/sda5/dataset/hmdb51/X.txt /media/sda5/dataset/hmdb51/train_hist.txt 3567 65536 100 /media/sda5/dataset/hmdb51/stip_test /media/sda5/dataset/hmdb51/test_hist.txt 1530
+(Model Build Time) Time Taken to build tree is99.4466
+(Hist Gen Time) Time taken to generate features/histogram = 47.2561 seconds.
+Train Hist size = 3567 by 65536
+Finished
+(Hist Gen Time) Time taken to generate features/histogram = 19.1721 seconds.
+Test Hist size = 1530 by 65536
+Finished
+./csvtosvm /media/sda5/dataset/hmdb51/train_hist.txt /media/sda5/dataset/hmdb51/train-labels.txt /media/sda5/dataset/hmdb51/train.libsvm
+Fineshed. Time Taken: 3.54392
+./csvtosvm /media/sda5/dataset/hmdb51/test_hist.txt /media/sda5/dataset/hmdb51/test-labels.txt /media/sda5/dataset/hmdb51/test.libsvm
+Fineshed. Time Taken: 1.30868
+./svm-scale -l 0 -u 1 -s /media/sda5/dataset/hmdb51/scale.txt /media/sda5/dataset/hmdb51/train.libsvm > /media/sda5/dataset/hmdb51/scale_train.libsvm
+./svm-scale -r /media/sda5/dataset/hmdb51/scale.txt /media/sda5/dataset/hmdb51/test.libsvm > /media/sda5/dataset/hmdb51/scale_test.libsvm
+./svm-train -q -t 0 /media/sda5/dataset/hmdb51/scale_train.libsvm /media/sda5/dataset/hmdb51/scale_train.libsvm.model
+time ./svm-predict /media/sda5/dataset/hmdb51/scale_train.libsvm /media/sda5/dataset/hmdb51/scale_train.libsvm.model /media/sda5/dataset/hmdb51/pred_train_label.txt
+Accuracy = 99.7757% (3559/3567) (classification)
+time ./svm-predict /media/sda5/dataset/hmdb51/scale_test.libsvm /media/sda5/dataset/hmdb51/scale_train.libsvm.model /media/sda5/dataset/hmdb51/pred_test_label.txt
+Accuracy = 11.5033% (176/1530) (classification)

@@ -1,0 +1,30 @@
+./kmeans /media/sda5/dataset/kth/X.txt /media/sda5/dataset/kth/C.txt /media/sda5/dataset/kth/Y.txt 128 100
+Loading time: 17.6254
+
+Train data has 290301 rows and 162 columns.
+
+(Model Build Time) Time elapsed for kmeans clustering = 58.2553 seconds.
+clustering successful. centers = 128 by 162
+Time for cluster assignment: 10.8179 seconds.
+Finished.
+./histogram /media/sda5/dataset/kth/stip_train /media/sda5/dataset/kth/C.txt /media/sda5/dataset/kth/train_hist.txt 383
+Time taken to load data: 22.1574 seconds.
+(Hist Gen Time)Time taken to generate features = 11.3029 seconds.
+Hist size = 383 by 128
+Finished
+./histogram /media/sda5/dataset/kth/stip_test /media/sda5/dataset/kth/C.txt /media/sda5/dataset/kth/test_hist.txt 216
+Time taken to load data: 12.694 seconds.
+(Hist Gen Time)Time taken to generate features = 7.10237 seconds.
+Hist size = 216 by 128
+Finished
+./csvtosvm /media/sda5/dataset/kth/train_hist.txt /media/sda5/dataset/kth/train-labels.txt /media/sda5/dataset/kth/train.libsvm
+Fineshed. Time Taken: 0.00589049
+./csvtosvm /media/sda5/dataset/kth/test_hist.txt /media/sda5/dataset/kth/test-labels.txt /media/sda5/dataset/kth/test.libsvm
+Fineshed. Time Taken: 0.00340804
+./svm-scale -l 0 -u 1 -s /media/sda5/dataset/kth/scale.txt /media/sda5/dataset/kth/train.libsvm > /media/sda5/dataset/kth/scale_train.libsvm
+./svm-scale -r /media/sda5/dataset/kth/scale.txt /media/sda5/dataset/kth/test.libsvm > /media/sda5/dataset/kth/scale_test.libsvm
+./svm-train -q -t 0 /media/sda5/dataset/kth/scale_train.libsvm /media/sda5/dataset/kth/scale_train.libsvm.model
+time ./svm-predict /media/sda5/dataset/kth/scale_train.libsvm /media/sda5/dataset/kth/scale_train.libsvm.model /media/sda5/dataset/kth/pred_train_label.txt
+Accuracy = 91.3838% (350/383) (classification)
+time ./svm-predict /media/sda5/dataset/kth/scale_test.libsvm /media/sda5/dataset/kth/scale_train.libsvm.model /media/sda5/dataset/kth/pred_test_label.txt
+Accuracy = 85.1852% (184/216) (classification)

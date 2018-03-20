@@ -1,0 +1,19 @@
+./histogram /media/sda5/dataset/ucf101/stip_train /media/sda5/dataset/ucf101/models/soft_balanced_kmeans_tree_model_ucf101128.txt /media/sda5/dataset/ucf101/train_hist.txt 9535 128 100 /media/sda5/dataset/ucf101/stip_test /media/sda5/dataset/ucf101/test_hist.txt 3782
+(Model Build Time) Time taken to build tree = 0.000356876 seconds.
+(Hist Gen Time) Time taken to generate features/histogram = 79.5444 seconds.
+Train Hist size = 9535 by 128
+Finished
+(Hist Gen Time) Time taken to generate features/histogram = 30.015 seconds.
+Test Hist size = 3782 by 128
+Finished
+./csvtosvm /media/sda5/dataset/ucf101/train_hist.txt /media/sda5/dataset/ucf101/train-labels.txt /media/sda5/dataset/ucf101/train.libsvm
+Fineshed. Time Taken: 0.318025
+./csvtosvm /media/sda5/dataset/ucf101/test_hist.txt /media/sda5/dataset/ucf101/test-labels.txt /media/sda5/dataset/ucf101/test.libsvm
+Fineshed. Time Taken: 0.139039
+./svm-scale -l 0 -u 1 -s /media/sda5/dataset/ucf101/scale.txt /media/sda5/dataset/ucf101/train.libsvm > /media/sda5/dataset/ucf101/scale_train.libsvm
+./svm-scale -r /media/sda5/dataset/ucf101/scale.txt /media/sda5/dataset/ucf101/test.libsvm > /media/sda5/dataset/ucf101/scale_test.libsvm
+./svm-train -q -t 0 /media/sda5/dataset/ucf101/scale_train.libsvm /media/sda5/dataset/ucf101/scale_train.libsvm.model
+time ./svm-predict /media/sda5/dataset/ucf101/scale_train.libsvm /media/sda5/dataset/ucf101/scale_train.libsvm.model /media/sda5/dataset/ucf101/pred_train_label.txt
+Accuracy = 26.5653% (2533/9535) (classification)
+time ./svm-predict /media/sda5/dataset/ucf101/scale_test.libsvm /media/sda5/dataset/ucf101/scale_train.libsvm.model /media/sda5/dataset/ucf101/pred_test_label.txt
+Accuracy = 14.9921% (567/3782) (classification)

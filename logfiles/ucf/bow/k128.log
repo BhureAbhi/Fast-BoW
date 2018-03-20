@@ -1,0 +1,27 @@
+g++     kmeans.cpp   -o kmeans
+#./kmeans /media/sda5/dataset/ucf101/X.txt /media/sda5/dataset/ucf101/cluster_means/C_ucf101_128.txt /media/sda5/dataset/ucf101/bow/_k128/Y.txt 128 100
+./histogram /media/sda5/dataset/ucf101/stip_train /media/sda5/dataset/ucf101/cluster_means/C_ucf101_128.txt /media/sda5/dataset/ucf101/train_hist.txt 9535
+
+
+
+
+Time taken to generate features = 1216.64 seconds.
+Hist size = 9535 by 128
+Finished
+./histogram /media/sda5/dataset/ucf101/stip_test /media/sda5/dataset/ucf101/cluster_means/C_ucf101_128.txt /media/sda5/dataset/ucf101/test_hist.txt 3782
+
+
+Time taken to generate features = 487.397 seconds.
+Hist size = 3782 by 128
+Finished
+./csvtosvm /media/sda5/dataset/ucf101/train_hist.txt /media/sda5/dataset/ucf101/train-labels.txt /media/sda5/dataset/ucf101/train.libsvm
+Fineshed. Time Taken: 0.309436
+./csvtosvm /media/sda5/dataset/ucf101/test_hist.txt /media/sda5/dataset/ucf101/test-labels.txt /media/sda5/dataset/ucf101/test.libsvm
+Fineshed. Time Taken: 0.12175
+./svm-scale -l 0 -u 1 -s /media/sda5/dataset/ucf101/scale.txt /media/sda5/dataset/ucf101/train.libsvm > /media/sda5/dataset/ucf101/scale_train.libsvm
+./svm-scale -r /media/sda5/dataset/ucf101/scale.txt /media/sda5/dataset/ucf101/test.libsvm > /media/sda5/dataset/ucf101/scale_test.libsvm
+./svm-train -q -t 0 /media/sda5/dataset/ucf101/scale_train.libsvm /media/sda5/dataset/ucf101/scale_train.libsvm.model
+time ./svm-predict /media/sda5/dataset/ucf101/scale_train.libsvm /media/sda5/dataset/ucf101/scale_train.libsvm.model /media/sda5/dataset/ucf101/pred_train_label.txt
+Accuracy = 28.6628% (2733/9535) (classification)
+time ./svm-predict /media/sda5/dataset/ucf101/scale_test.libsvm /media/sda5/dataset/ucf101/scale_train.libsvm.model /media/sda5/dataset/ucf101/pred_test_label.txt
+Accuracy = 16.129% (610/3782) (classification)

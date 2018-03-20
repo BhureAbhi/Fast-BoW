@@ -1,0 +1,23 @@
+./histogram /media/sda5/dataset/kth/stip_train /media/sda5/dataset/kth/models/soft_balanced_kmeans_tree_model_kth65536.txt /media/sda5/dataset/kth/train_hist.txt 383 65536 100
+
+(Model Build Time) Time taken to build tree = 2.62884 seconds.
+(Hist Gen Time)Time taken to generate features/histogram = 1.82458 seconds.
+Hist size = 383 by 65536
+Finished
+./histogram /media/sda5/dataset/kth/stip_test /media/sda5/dataset/kth/models/soft_balanced_kmeans_tree_model_kth65536.txt /media/sda5/dataset/kth/test_hist.txt 216 65536 100
+
+(Model Build Time) Time taken to build tree = 1.95747 seconds.
+(Hist Gen Time)Time taken to generate features/histogram = 1.0899 seconds.
+Hist size = 216 by 65536
+Finished
+./csvtosvm /media/sda5/dataset/kth/train_hist.txt /media/sda5/dataset/kth/train-labels.txt /media/sda5/dataset/kth/train.libsvm
+Fineshed. Time Taken: 0.224991
+./csvtosvm /media/sda5/dataset/kth/test_hist.txt /media/sda5/dataset/kth/test-labels.txt /media/sda5/dataset/kth/test.libsvm
+Fineshed. Time Taken: 0.140271
+./svm-scale -l 0 -u 1 -s /media/sda5/dataset/kth/scale.txt /media/sda5/dataset/kth/train.libsvm > /media/sda5/dataset/kth/scale_train.libsvm
+./svm-scale -r /media/sda5/dataset/kth/scale.txt /media/sda5/dataset/kth/test.libsvm > /media/sda5/dataset/kth/scale_test.libsvm
+./svm-train -q -t 0 /media/sda5/dataset/kth/scale_train.libsvm /media/sda5/dataset/kth/scale_train.libsvm.model
+time ./svm-predict /media/sda5/dataset/kth/scale_train.libsvm /media/sda5/dataset/kth/scale_train.libsvm.model /media/sda5/dataset/kth/pred_train_label.txt
+Accuracy = 100% (383/383) (classification)
+time ./svm-predict /media/sda5/dataset/kth/scale_test.libsvm /media/sda5/dataset/kth/scale_train.libsvm.model /media/sda5/dataset/kth/pred_test_label.txt
+Accuracy = 86.1111% (186/216) (classification)
